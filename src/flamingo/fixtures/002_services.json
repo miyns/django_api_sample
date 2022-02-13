@@ -1,0 +1,32 @@
+[
+    {
+        "model": "flamingo.service",
+        "pk": 1,
+        "fields": {
+            "code": "F001",
+            "name": "ClassF",
+            "is_freemium": true,
+            "priority": 3
+        }
+    },
+    {
+        "model": "flamingo.service",
+        "pk": 2,
+        "fields": {
+            "code": "A001",
+            "name": "ClassA",
+            "is_freemium": false,
+            "priority": 1
+        }
+    },
+    {
+        "model": "flamingo.service",
+        "pk": 3,
+        "fields": {
+            "code": "B001",
+            "name": "ClassB",
+            "is_freemium": false,
+            "priority": 2
+        }
+    }
+]

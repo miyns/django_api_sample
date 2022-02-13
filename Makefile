@@ -2,7 +2,7 @@
 setup:
 	pip install -r requirements.freeze.txt
 	cd src && python manage.py migrate --settings=flamingo.settings
-	cd src && python manage.py loaddata fixtures/*.json
+	cd src && python manage.py loaddata flamingo/fixtures/*.json
 	cd src && python manage.py createsuperuser
         
 .PHONY: server
