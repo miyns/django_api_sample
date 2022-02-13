@@ -27,7 +27,6 @@ class ServiceViewSet(viewsets.ReadOnlyModelViewSet):
     lookup_field = 'code'
 
     def get_serializer_class(self):
-        print(self.action)
         if self.action in ("retrieve",):
             return ServiceDetailSerializer
         return ServiceSerializer
