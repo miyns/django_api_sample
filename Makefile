@@ -1,6 +1,7 @@
 .PHONY: setup
 setup:
 	pip install -r requirements.freeze.txt
+        cd src && cp secrets.template.ini secrets.ini
 	cd src && python manage.py migrate --settings=flamingo.settings.local
 	cd src && python manage.py loaddata flamingo/fixtures/*.json
 	cd src && python manage.py createsuperuser
