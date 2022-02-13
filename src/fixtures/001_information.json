@@ -1,0 +1,11 @@
+[
+    {
+        "model": "flamingo.information",
+        "pk": 1,
+        "fields": {
+            "title": "create new project `flamingo`",
+            "contents": "now under construction",
+            "published_at": "2022-02-13T00:00:00Z"
+        }
+    }
+]
