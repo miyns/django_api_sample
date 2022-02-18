@@ -10,6 +10,13 @@ from flamingo.exceptions import FirebaseError
 from flamingo.exceptions import InvalidAuthToken
 from flamingo.exceptions import NoAuthToken
 
+# firebase credential file path
+import firebase_admin
+json_path = "firebase-adminsdk.json"
+cred = firebase_admin.credentials.Certificate(json_path)
+default_app = firebase_admin.initialize_app(cred)
+
+
 import logging
 
 logger = logging.getLogger(__name__)
