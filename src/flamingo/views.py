@@ -1,12 +1,13 @@
 from rest_framework import viewsets, routers, status
-from rest_framework.authentication import SessionAuthentication
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
+
 from flamingo.models import Information, Service
 from flamingo.serializers import InformationSerializer, ServiceSerializer, ServiceDetailSerializer
 
 
 class AuthViewSet(viewsets.GenericViewSet):
-    authentication_classes = (SessionAuthentication,)
+    permission_classes = (AllowAny,)
 
     def list(self, request):
         if request.user.is_authenticated:
@@ -18,16 +19,17 @@ class AuthViewSet(viewsets.GenericViewSet):
 
 
 class InformationViewSet(viewsets.ReadOnlyModelViewSet):
+    permission_classes = (AllowAny,)
     queryset = Information.objects.all()
     serializer_class = InformationSerializer
 
 
 class ServiceViewSet(viewsets.ReadOnlyModelViewSet):
+    permission_classes = (AllowAny,)
     queryset = Service.objects.none()
     lookup_field = 'code'
 
     def get_serializer_class(self):
-        print(self.action)
         if self.action in ("retrieve",):
             return ServiceDetailSerializer
         return ServiceSerializer

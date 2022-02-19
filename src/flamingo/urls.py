@@ -20,5 +20,5 @@ from flamingo.views import api_router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(api_router.urls)),
+    path('api/v1/', include(api_router.urls)),
 ]
